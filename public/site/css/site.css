@@ -1,0 +1,384 @@
+*{
+  margin: 0;
+  padding: 0;
+  border: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  outline: none;
+  scroll-behavior: smooth;
+}
+:root{
+  --azul-escuro: #304D63;
+  --branco-cinza: white;
+  --azul-claro: #b2e7e8;
+  --black: black;
+  --piscina: #8fb9aa;
+  --azul-piscina: #add8e6;
+  --sombra: rgb(167, 165, 167);
+}
+.dark-mode:root{
+  --azul-escuro: #363636;
+  --branco-cinza: black;
+  --azul-claro: #a7a6a6;
+  --black: white;
+  --piscina: #363636;
+  --azul-piscina: #acacac;
+  --sombra: rgb(62, 58, 62);
+}
+body{
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--branco-cinza);
+}
+.alert.alert-success.col-sm-12{
+  z-index: 100;
+  position: fixed;
+  border: 2px solid var(--azul-escuro);
+  padding: 1%;
+  margin-top: 1%;
+}
+header{
+  position: fixed;                       /*fixa tudo que estiver no header.*/
+  width: 100%;                            /*widht necessário, pois usei o position fixed.*/
+  background-color:var(--azul-claro);             /*cor do header.*/
+  height: 80px;                           /*altura que header ocupará na tela.*/
+  z-index: 100;
+}
+.container {                                /*a div container é uma sub-divisão do header.*/
+  display: flex;                          /*display flex organizará as divs ".content-header"*/
+  align-items:center;                    /*centraliza itens pela altura.*/
+  justify-content: space-around;
+  height: inherit;                        /*herda altura do pai, neste caso, herda altura do header.*/
+}
+.content-header {                           /*content-header é uma div que representará cada item no header.*/
+  width: 100%;                            /*cada div ocupará o máximo na tela.*/
+  display: flex;                          /*todos os itens da div está alinhados, por exemplo o admin com o search*/
+  justify-content:center;                /*todos os itens estarão centralizados pelo comprimento.*/
+}
+.content-header a h2{
+  color: var(--black);
+  text-decoration: none;
+}
+form {
+  display: flex;                          /*mantem o search colado com a barra de input.*/
+}
+.logo {
+  width: 230px;                            /*tamahno do logo central.*/
+}
+.content-header a.admin-btn {                            
+  margin-left:10px;                   /*espaçamento do botão de admin com o search.*/
+  background-color: var(--piscina);
+  color: var(--black);
+  padding: 6px;
+  border-radius: 5px;
+  font-size: 10pt;
+  transition: .3s all;
+  cursor: pointer;
+}
+.content-header input{
+  background-color: var(--piscina);
+  color: var(--black);
+  padding: 6px;
+  border-radius: 5px 0 0 5px;
+  font-size: 10pt;
+  transition: .3s all;
+  cursor:pointer;
+}
+.content-header button{
+  background-color: var(--piscina);
+  color: var(--black);
+  padding: 6px;
+  border-radius: 0 5px 5px 0;
+  font-size: 10pt;
+  transition: .3s all;
+  cursor:pointer;
+}
+hr{
+  width: 100%;
+  height: 90px;
+  background-image: linear-gradient(to right,var(--azul-claro), var(--azul-escuro));
+  position: fixed;
+  box-shadow: 0px 6px 5px 0px rgba(184,182,184,1);
+}
+/*------------------------------------conteudo---------------------*/
+.livros-container label{
+  align-items: center;
+  margin-left: 7%;
+  color: var(--black) ;
+}
+.darkModebtn{
+  width: 100%;
+  display:flex;
+  align-items: center;
+}
+.filtrar-categoria button{
+  background-color: var(--azul-piscina);;
+  color: var(--black);
+  padding: 6px;
+  border-radius: 5px;
+  font-size: 10pt;
+  transition: .3s all;
+  cursor:pointer;
+  border: 2px solid var(--azul-escuro);
+}
+.filtrar-categoria select{
+  background-color: var(--azul-piscina);;
+  color: var(--black);
+  padding: 11px;
+  border-radius: 5px;
+  font-size: 10pt;
+  transition: .3s all;
+  cursor:pointer;
+  margin:0.5%;
+  border: 2px solid var(--azul-escuro); 
+}
+.select-container{
+  width: 100%;
+  display:flex;
+  align-items: center;
+}
+.select{
+  display: flex;
+}
+.select-container label{
+  align-items: center;
+  margin-left: 7%;
+  color: var(--black);
+}
+.livros-container{
+  
+  padding: 10% 4%;
+}
+.livros img{
+max-width: 50%;
+box-shadow: 5px 5px 5px #706e6e;
+}
+.imagem-container{
+  display: flex;
+  justify-content: center;
+}
+.livros{
+  padding: 5% 2%;
+  display: grid;
+  grid-template-columns: 300px 300px 300px;
+  justify-content: space-around;
+  gap: 1rem;
+}
+.info-livro{
+  margin-top: 3.5%;
+}
+.numero-maior::first-line{
+  font-size: 1.5rem;
+
+}
+.cada-livro button{
+  background-color: var(--branco-cinza); 
+  color: var(--black); 
+  border: 2px solid var(--azul-escuro);
+  padding: 2%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 2%;
+  transition-duration: 0.3s;
+  cursor: pointer;
+}
+.cada-livro button:hover{
+  background-color: var(--azul-escuro);
+  color: var(--branco-cinza);
+}
+.cada-livro input{
+  height:32px;
+  font-size: 16px;
+  border-radius: 10%;
+  border: 2px solid var(--azul-escuro);
+}
+.cada-livro form{
+  align-items: center;
+  padding-top: 2%;
+}
+.cada-livro{
+  background-color: #abb8b4;
+  justify-content: flex-end;
+  padding: 1rem;
+  border: 2px solid var(--azul-escuro);
+  border-radius: 4%;
+  box-shadow: 6px 9px 74px 0px var(--sombra);
+  
+}
+
+/*------------------------------------footer---------------------*/
+
+footer{
+  position:static;
+  bottom: 0%;
+  max-width: 100%;
+  width: 100%; 
+  height: 150px;                           /*widht necessário, pois usei o position fixed.*/
+  background-color:var(--azul-escuro);             /*cor do header.*/
+  color: var(--branco-cinza); 
+}
+.container-footer{
+  width: 100%;
+  display: flex;                          /*display flex organizará as divs ".content-header"*/
+  align-items:center;                    /*centraliza itens pela altura.*/
+  justify-content: space-around;
+  height: inherit;   
+}
+.conteudo-footer{                         
+  width: 100%;                            /*cada div ocupará o máximo na tela.*/
+  display: flex;                          /*todos os itens da div está alinhados, por exemplo o admin com o search*/
+  justify-content:center; 
+}
+.conteudo-footer img.icones{  
+  width: 10%;
+  cursor: pointer;
+}
+.conteudo-footer a img{
+  width: 80%;
+  cursor: pointer;
+} 
+
+/*------------------------------------responsividade-header---------------------*/
+
+@media (max-width: 1456px){
+  .content-header h2{
+    display: none;
+  }
+}
+@media (max-width: 990px){
+  .livros { grid-template-columns: repeat(2, 1fr); }
+
+  .livros-container{
+    padding: 15% 4%;
+  }
+  .conteudo-footer img.icones{ 
+    width: 20%;
+  }
+
+}
+@media (max-width: 850px){
+  .container{
+    width: 95%;
+    justify-content: space-between;
+    display: flex;
+  }
+  .alert.alert-success.col-sm-12{
+    width: 15%;
+  }
+}
+@media (max-width: 640px){
+  .container{
+    width: 95%;
+    display: flex;
+  }
+  .livros { grid-template-columns: repeat(1, 1fr); }
+  .livros-container{
+    padding: 20% 4%;
+  }
+  
+  .alert.alert-success.col-sm-12{
+    margin-top: 2%;
+  }
+}
+@media (max-width: 625px){
+  .alert.alert-success.col-sm-12{
+    border: 0;
+  }
+  .conteudo-footer img.icones{ 
+    width: 25%;
+  }
+}
+@media (max-width: 600px){
+  .alert.alert-success.col-sm-12{
+    border-color: var(--azul-claro);
+    background-color: var(--azul-claro);
+  }
+}
+@media (max-width: 560px){
+  .alert.alert-success.col-sm-12{
+    display: none;
+  }
+}
+@media (max-width: 520px){
+  .logo{
+    width: 200px;
+  }
+  .content-header input{
+    padding: 0px;
+  }
+  .content-header button{
+    padding: 0px;
+  }
+}
+@media (max-width: 495px){
+  .livros-container{
+    padding: 40% 4%;
+  }
+  .conteudo-footer p{
+    font-size: 10pt;
+  }
+
+}
+@media (max-width: 460px){
+  .content-header input{
+    font-size: 7pt;
+    border: 4px static #304D63;
+  }
+  .content-header button{
+    font-size: 5pt;
+  }
+  .container{
+    width: 50%;
+  }
+}
+@media (max-width: 415px){
+  .container{
+    width: 87%;
+  }
+  .logo{
+    width: 100px;
+  }
+}
+@media (max-width: 410px){
+  .select-container{
+    justify-content: center;
+  }
+  .conteudo-footer img.icones{  
+    width: 30%;
+  }
+  .conteudo-footer p{
+    display: none;
+  }
+  .conteudo-footer a img{
+    width: 150%;
+  } 
+}
+@media (max-width: 360px){
+  .container{
+    width: 95%;
+  }
+}
+@media (max-width: 320px){
+  .select-container{
+    width: 95%;
+  }
+  .cada-livro{
+    padding: 0.5rem;
+  }
+  .cada-livro form{
+    display: block;
+  }
+  .cada-livro button{
+    margin: 0px;
+  }
+  .cada-livro input{
+    border-radius: 0% 10% 10% 0%
+  }
+  .livros-container label{
+    margin-bottom: 6%;
+  }
+}
+
+
+

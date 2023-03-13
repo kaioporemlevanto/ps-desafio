@@ -8,6 +8,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\LocaleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\SiteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,12 @@ use App\Http\Controllers\ProdutoController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//Rotas para o site
+Route::get('siteIndex', [SiteController::class, 'index'])->name('siteIndex');
+Route::get('filtro', [SiteController::class, 'filtro'])->name('filtro');
+Route::get('buscar', [SiteController::class, 'buscar'])->name('buscar');
+Route::post('/comprar/{id}', [SiteController::class, 'comprar'])->name('comprar');
+
 
 Route::middleware('locale')->group(function () {
 

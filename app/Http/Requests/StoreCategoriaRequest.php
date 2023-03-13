@@ -6,25 +6,28 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class StoreCategoriaRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     *
-     * @return bool
-     */
+
     public function authorize()
     {
-        return false;
+        return true;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array
-     */
+
     public function rules()
     {
         return [
-            //
+            'categoria' => ['required', 'unique:categorias', 'min:3', 'max:100']
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'categoria.unique' => "Categoria já existente",
+            'categoria.required' => "Campo Obrigatório!",
+            'categoria.max' => "Campo com um máximo de 100 caracteres!",
+            'categoria.min' => "Campo com um mínimo de 3 caracteres!",
+
         ];
     }
 }
