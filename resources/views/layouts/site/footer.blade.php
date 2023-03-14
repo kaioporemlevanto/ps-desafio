@@ -1,6 +1,5 @@
 <footer>
     <div class="container-footer">
-
         <div class="conteudo-footer">
             <div id="btnTopo">
                 <a>
@@ -21,7 +20,5 @@
             <img class="icones" src="{{ asset('site/img/youtube.svg') }}" alt="Ícone Youtube"
                 onclick="openPage('https://www.youtube.com/@kaioporemlevanto?sub_confirmation=1')">
         </div>
-
-
     </div>
 </footer>

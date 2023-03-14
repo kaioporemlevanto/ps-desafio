@@ -8,7 +8,6 @@ use App\Http\Requests\UpdateCategoriaRequest;
 use App\Models\Categoria;
 use App\Models\Produto;
 use Illuminate\Support\Facades\Storage;
-use PhpParser\Node\Expr\FuncCall;
 
 class CategoriaController extends Controller
 {
@@ -21,20 +20,16 @@ class CategoriaController extends Controller
         $this->categoriaDoLivro = $categoriaDoLivro;
     }
 
-
-
     public function index()
     {
         $categorias = $this->categoriaDoLivro->all();
         return view('categoria.index', compact('categorias'));
     }
 
-
     public function create()
     {
         return view('categoria.crud');
     }
-
 
     public function store(StoreCategoriaRequest $request)
     {
@@ -43,7 +38,6 @@ class CategoriaController extends Controller
         return redirect()->route('categoria.index')->with('success', 'Categoria de Livro criada com SUCESSO!');
     }
 
-    //Não vai ser usado por agora
     public function show($id)
     {
         $categoria = $this->categoriaDoLivro->find($id);

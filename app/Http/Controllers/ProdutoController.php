@@ -27,13 +27,11 @@ class ProdutoController extends Controller
         return view('produto.index', compact('produtos'));
     }
 
-
     public function create()
     {
         $categorias = $this->categoria->all();
         return view('produto.crud', compact('categorias'));
     }
-
 
     public function store(StoreProdutoRequest $request)
     {
@@ -43,7 +41,6 @@ class ProdutoController extends Controller
         return redirect()->route('produto.index')->with('success', 'Livro criado com sucesso!');
     }
 
-
     public function show($id)
     {
         $produto = $this->produto->find($id);
@@ -51,14 +48,12 @@ class ProdutoController extends Controller
         return response()->json($produto);
     }
 
-
     public function edit($id)
     {
         $produto = $this->produto->find($id);
         $categorias = $this->categoria->all();
         return view('produto.crud', compact('categorias', 'produto'));
     }
-
 
     public function update(UpdateProdutoRequest $request, $id)
     {
@@ -74,10 +69,8 @@ class ProdutoController extends Controller
 
     public function destroy($id)
     {
-
         $produto = $this->produto->find($id);
         Storage::disk('public')->delete(str_replace('/storage/', '', $produto->imagem));
-        //Storage::disk('public')->delete(substr($produto->imagem, 9));
         $produto->delete();
         return redirect()->route('produto.index')->with('success', 'Livro deletado com sucesso!');
     }

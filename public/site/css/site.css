@@ -37,35 +37,35 @@ body{
   margin-top: 1%;
 }
 header{
-  position: fixed;                       /*fixa tudo que estiver no header.*/
-  width: 100%;                            /*widht necessário, pois usei o position fixed.*/
-  background-color:var(--azul-claro);             /*cor do header.*/
-  height: 80px;                           /*altura que header ocupará na tela.*/
+  position: fixed;                   
+  width: 100%;                          
+  background-color:var(--azul-claro);             
+  height: 80px;                           
   z-index: 100;
 }
-.container {                                /*a div container é uma sub-divisão do header.*/
-  display: flex;                          /*display flex organizará as divs ".content-header"*/
-  align-items:center;                    /*centraliza itens pela altura.*/
+.container{                               
+  display: flex;                          
+  align-items:center;                    
   justify-content: space-around;
-  height: inherit;                        /*herda altura do pai, neste caso, herda altura do header.*/
+  height: inherit;                        
 }
-.content-header {                           /*content-header é uma div que representará cada item no header.*/
-  width: 100%;                            /*cada div ocupará o máximo na tela.*/
-  display: flex;                          /*todos os itens da div está alinhados, por exemplo o admin com o search*/
-  justify-content:center;                /*todos os itens estarão centralizados pelo comprimento.*/
+.content-header{                        
+  width: 100%;                          
+  display: flex;                        
+  justify-content:center;              
 }
 .content-header a h2{
   color: var(--black);
   text-decoration: none;
 }
-form {
-  display: flex;                          /*mantem o search colado com a barra de input.*/
+form{
+  display: flex;                          
 }
-.logo {
-  width: 230px;                            /*tamahno do logo central.*/
+.logo{
+  width: 230px;                           
 }
-.content-header a.admin-btn {                            
-  margin-left:10px;                   /*espaçamento do botão de admin com o search.*/
+.content-header a.admin-btn{                            
+  margin-left:10px;                 
   background-color: var(--piscina);
   color: var(--black);
   padding: 6px;
@@ -145,7 +145,6 @@ hr{
   color: var(--black);
 }
 .livros-container{
-  
   padding: 10% 4%;
 }
 .livros img{
@@ -168,7 +167,6 @@ box-shadow: 5px 5px 5px #706e6e;
 }
 .numero-maior::first-line{
   font-size: 1.5rem;
-
 }
 .cada-livro button{
   background-color: var(--branco-cinza); 
@@ -204,30 +202,27 @@ box-shadow: 5px 5px 5px #706e6e;
   border: 2px solid var(--azul-escuro);
   border-radius: 4%;
   box-shadow: 6px 9px 74px 0px var(--sombra);
-  
 }
-
 /*------------------------------------footer---------------------*/
-
 footer{
   position:static;
   bottom: 0%;
   max-width: 100%;
   width: 100%; 
-  height: 150px;                           /*widht necessário, pois usei o position fixed.*/
-  background-color:var(--azul-escuro);             /*cor do header.*/
+  height: 150px;                           
+  background-color:var(--azul-escuro);             
   color: var(--branco-cinza); 
 }
 .container-footer{
   width: 100%;
-  display: flex;                          /*display flex organizará as divs ".content-header"*/
-  align-items:center;                    /*centraliza itens pela altura.*/
+  display: flex;                          
+  align-items:center;                    
   justify-content: space-around;
   height: inherit;   
 }
 .conteudo-footer{                         
-  width: 100%;                            /*cada div ocupará o máximo na tela.*/
-  display: flex;                          /*todos os itens da div está alinhados, por exemplo o admin com o search*/
+  width: 100%;                           
+  display: flex;                         
   justify-content:center; 
 }
 .conteudo-footer img.icones{  
@@ -238,9 +233,7 @@ footer{
   width: 80%;
   cursor: pointer;
 } 
-
 /*------------------------------------responsividade-header---------------------*/
-
 @media (max-width: 1456px){
   .content-header h2{
     display: none;
@@ -248,14 +241,12 @@ footer{
 }
 @media (max-width: 990px){
   .livros { grid-template-columns: repeat(2, 1fr); }
-
   .livros-container{
     padding: 15% 4%;
   }
   .conteudo-footer img.icones{ 
     width: 20%;
   }
-
 }
 @media (max-width: 850px){
   .container{
@@ -276,7 +267,6 @@ footer{
   .livros-container{
     padding: 20% 4%;
   }
-  
   .alert.alert-success.col-sm-12{
     margin-top: 2%;
   }
@@ -318,7 +308,6 @@ footer{
   .conteudo-footer p{
     font-size: 10pt;
   }
-
 }
 @media (max-width: 460px){
   .content-header input{

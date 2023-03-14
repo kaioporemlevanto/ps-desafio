@@ -18,13 +18,11 @@
 </head>
 
 <body>
-
     @include('layouts.site.header')
     @include('components.alerts')
     @yield('conteudo')
     @include('layouts.site.footer')
     <script src="{{ asset('site/js/script.js') }}"></script>
-
 </body>
 
 </html>
